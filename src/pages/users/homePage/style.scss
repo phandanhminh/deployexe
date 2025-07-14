@@ -1,0 +1,38 @@
+.home-section {
+    position: relative;
+    padding: 600px 20px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+
+  
+  .home-image {
+    flex: 1;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .home-text {
+    flex: 1;
+    h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: #333;
+    }
+  
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+    }
+  
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+  

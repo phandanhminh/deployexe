@@ -1,0 +1,104 @@
+.schedule-container {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 900px;
+  margin: 20px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h2 {
+      font-size: 1.5rem;
+      color: #2b6cb0;
+    }
+
+    button {
+      background: #edf2f7;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #e2e8f0;
+      }
+    }
+  }
+
+  .form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+
+    select,
+    input[type="time"] {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e0;
+    }
+
+    .submit {
+      background: #38a169;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #2f855a;
+      }
+    }
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    th {
+      background: #f7fafc;
+      color: #4a5568;
+    }
+
+    td button {
+      margin-right: 8px;
+      padding: 4px 8px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .edit {
+      background: #ecc94b;
+      color: #1a202c;
+
+      &:hover {
+        background: #d69e2e;
+      }
+    }
+
+    .delete {
+      background: #f56565;
+      color: white;
+
+      &:hover {
+        background: #c53030;
+      }
+    }
+  }
+}

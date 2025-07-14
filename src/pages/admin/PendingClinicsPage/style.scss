@@ -1,0 +1,103 @@
+.container {
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #9e4f74;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #0d6efd, #6610f2);
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+}
+
+  .table {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    border-collapse: collapse;
+    transition: all 0.3s ease-in-out;
+
+    thead {
+      background: linear-gradient(45deg, #0d6efd, #aaa4b4);
+      color: white;
+
+      th {
+        padding: 14px 20px;
+        font-size: 16px;
+        text-align: left;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background 0.2s ease-in-out;
+
+        &:nth-child(even) {
+          background-color: #f9f9f9;
+        }
+
+        &:hover {
+          background: rgba(13, 110, 253, 0.05);
+        }
+
+        td {
+          padding: 14px 20px;
+          border-bottom: 1px solid #eee;
+          font-size: 15px;
+          color: #333;
+        }
+
+        button {
+          margin-right: 8px;
+          padding: 8px 14px;
+          font-size: 14px;
+          font-weight: 500;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+          &.btn-success {
+            background: linear-gradient(to right, #28a745, #218838);
+            color: white;
+
+            &:hover {
+              background: linear-gradient(to right, #218838, #1e7e34);
+              transform: scale(1.05);
+            }
+          }
+
+          &.btn-danger {
+            background: linear-gradient(to right, #dc3545, #c82333);
+            color: white;
+
+            &:hover {
+              background: linear-gradient(to right, #c82333, #bd2130);
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+    }
+  }
+}

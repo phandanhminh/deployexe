@@ -1,0 +1,154 @@
+.admin-user-container {
+  padding: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #9e4f74;
+    margin-bottom: 30px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+  }
+
+  .admin-user-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+
+    thead {
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+      color: #fff;
+
+      th {
+        padding: 16px;
+        font-size: 16px;
+        text-align: left;
+      }
+    }
+
+    tbody tr {
+      transition: background 0.3s;
+      &:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+      &:hover {
+        background-color: #e9f2ff;
+      }
+
+      td {
+        padding: 14px 16px;
+      }
+
+      button {
+        padding: 8px 16px;
+        margin-right: 8px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 600;
+
+        &:hover {
+          opacity: 0.9;
+        }
+
+        &.danger {
+          background: #dc3545;
+          color: white;
+
+          &:hover {
+            background: #c82333;
+          }
+        }
+
+        &.edit {
+          background: #0d6efd;
+          color: white;
+
+          &:hover {
+            background: #0b5ed7;
+          }
+        }
+      }
+    }
+  }
+
+  .edit-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #2c3e50;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+
+      &:focus {
+        border-color: #0d6efd;
+        outline: none;
+      }
+    }
+
+    .edit-actions {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        width: 48%;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+
+        &:first-child {
+          background-color: #198754;
+          color: white;
+          &:hover {
+            background-color: #157347;
+          }
+        }
+
+        &.danger {
+          background-color: #adb5bd;
+          color: white;
+          &:hover {
+            background-color: #6c757d;
+          }
+        }
+      }
+    }
+  }
+  button.edit {
+  background-color: #0d6efd;
+  color: white;
+
+  &:hover {
+    background-color: #0b5ed7;
+  }
+}
+}
