@@ -71,6 +71,10 @@ function renderClinicRouter() {
             path: ROUTERS.CLINIC.ScheduleManagement,
             component: <ScheduleManagement />,
         },
+        {
+            path: ROUTERS.ADMIN.AdminFeedbackPage,
+            component: <AdminFeedbackPage/>,
+        },
         
         // Add more manager routes here if needed
     ];
@@ -106,10 +110,7 @@ function renderAdminRouter() {
             path: ROUTERS.ADMIN.AdminDashboard,
             component: <AdminDashboard/>,
         },
-        {
-            path: ROUTERS.ADMIN.AdminFeedbackPage,
-            component: <AdminFeedbackPage/>,
-        },
+        
         // Add more manager routes here if needed
     ];
 

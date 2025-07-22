@@ -8,16 +8,18 @@ export const ROUTERS={
         ViewHomePages:"/ViewHomePages",
         ViewHistoryBooking:"/ViewHistoryBooking",
         DownloadApp:"/DownloadApp",
+        
     },
     CLINIC:{
         ViewBookingSchedule:"/ViewBookingSchedule",
-        ScheduleManagement:"/ScheduleManagement"
+        ScheduleManagement:"/ScheduleManagement",
+        AdminFeedbackPage:"/AdminFeedbackPage"
         
     },
     ADMIN:{
         PendingClinicsPage:"/PendingClinicsPage",
         DetailAdmin:"/DetailAdmin",
         AdminDashboard:"/AdminDashboard",
-        AdminFeedbackPage:"/AdminFeedbackPage"
+
     },
 };
