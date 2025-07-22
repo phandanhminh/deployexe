@@ -21,7 +21,7 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 
     thead {
-      background: linear-gradient(90deg, #0d6efd, #6610f2);
+      background: linear-gradient(90deg, #bfa3c0, #6610f2);
       color: #fff;
 
       th {
@@ -152,3 +152,39 @@
   }
 }
 }
+.pagination {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  button {
+    padding: 12px 24px; // 👉 to hơn
+    font-size: 18px;
+    border: none;
+    background-color: #c90cbf;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background-color: #d69fcf;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+

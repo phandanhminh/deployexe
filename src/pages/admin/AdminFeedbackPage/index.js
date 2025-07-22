@@ -25,7 +25,7 @@ const AdminFeedback = () => {
 
   return (
     <div className="feedback-container">
-      <h2 className="feedback-title">📣 Đánh Giá Của Người Dùng</h2>
+      <h2 className="feedback-title">📣 Đánh Giá của Người Dùng</h2>
       <div className="feedback-grid">
         {feedbacks.map((item) => (
           <div key={item.id} className="feedback-card">

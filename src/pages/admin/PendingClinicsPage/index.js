@@ -6,22 +6,31 @@ import "./style.scss";
 const PendingClinicsPage = () => {
   const [clinics, setClinics] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [pageIndex, setPageIndex] = useState(1);
+const [totalPages, setTotalPages] = useState(1);
 
-  const fetchPendingClinics = async () => {
-    try {
-      setLoading(true);
-      const token = localStorage.getItem("token");
-      const response = await axios.get("https://pettrack.onrender.com/api/admin/clinics/paged", {
-        params: { status: "Pending", page: 1, pageSize: 20 },
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setClinics(response.data.data.items || []);
-    } catch (error) {
-      console.error("Lỗi khi tải danh sách phòng khám:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const fetchPendingClinics = async (page = 1) => {
+  try {
+    setLoading(true);
+    const token = localStorage.getItem("token");
+    const response = await axios.get("https://pettrack.onrender.com/api/admin/clinics/paged", {
+      params: { status: "Pending", page, pageSize: 5 }, // chỉnh pageSize nếu cần
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    const data = response.data.data;
+    setClinics(data.items || []);
+    setTotalPages(data.totalPages); // backend có trả totalPages không?
+    setPageIndex(data.pageIndex || page);
+  } catch (error) {
+    console.error("Lỗi khi tải danh sách phòng khám:", error);
+  } finally {
+    setLoading(false);
+  }
+};
+useEffect(() => {
+  fetchPendingClinics();
+}, [pageIndex]);
 
   const handleApprove = async (clinicId) => {
     const result = await Swal.fire({
@@ -114,7 +123,23 @@ const PendingClinicsPage = () => {
             )}
           </tbody>
         </table>
+        
       )}
+      <div className="pagination">
+           <button
+             disabled={pageIndex === 1}
+             onClick={() => setPageIndex(prev => Math.max(prev - 1, 1))}
+           >
+             &laquo; Trước
+           </button>
+           <span>Trang {pageIndex} / {totalPages}</span>
+           <button
+             disabled={pageIndex === totalPages}
+             onClick={() => setPageIndex(prev => Math.min(prev + 1, totalPages))}
+           >
+             Sau &raquo;
+           </button>
+         </div>
     </div>
   );
 };

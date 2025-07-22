@@ -12,17 +12,28 @@ const AdminUserManagement = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
+  const [pageIndex, setPageIndex] = useState(1);
+  const [pageSize] = useState(7); // mỗi trang 7 user
+  const [totalPages, setTotalPages] = useState(1);
 
   const fetchUsers = async () => {
-    try {
-      const response = await axios.get("https://pettrack.onrender.com/api/admin/users", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setUsers(response.data.data.items);
-    } catch (err) {
-      console.error("Lỗi khi lấy danh sách người dùng:", err);
-    }
-  };
+  try {
+    const response = await axios.get(`https://pettrack.onrender.com/api/admin/users`, {
+      headers: { Authorization: `Bearer ${token}` },
+      params: {
+        PageIndex: pageIndex,
+        PageSize: pageSize,
+      },
+    });
+    setUsers(response.data.data.items);
+    setTotalPages(response.data.data.totalPages);
+  } catch (err) {
+    console.error("Lỗi khi lấy danh sách người dùng:", err);
+  }
+};
+useEffect(() => {
+    fetchUsers();
+  }, [pageIndex]); 
 
   const handleDelete = async (id) => {
     const result = await Swal.fire({
@@ -105,7 +116,24 @@ const AdminUserManagement = () => {
             </tr>
           ))}
         </tbody>
+
       </table>
+      <div className="pagination">
+           <button
+             disabled={pageIndex === 1}
+             onClick={() => setPageIndex(prev => Math.max(prev - 1, 1))}
+           >
+             &laquo; Trước
+           </button>
+           <span>Trang {pageIndex} / {totalPages}</span>
+           <button
+             disabled={pageIndex === totalPages}
+             onClick={() => setPageIndex(prev => Math.min(prev + 1, totalPages))}
+           >
+             Sau &raquo;
+           </button>
+         </div>
+      
 
       {selectedUser && (
         <div className="edit-form">
@@ -120,7 +148,9 @@ const AdminUserManagement = () => {
           </div>
         </div>
       )}
+      
     </div>
+    
   );
 };
 
