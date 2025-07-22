@@ -42,7 +42,6 @@ const ViewBookingSchedule = () => {
           <thead>
             <tr>
               <th>#</th>
-              <th>Người dùng</th>
               <th>Gói dịch vụ</th>
               <th>Ngày hẹn</th>
               <th>Giá</th>
