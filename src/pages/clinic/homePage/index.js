@@ -42,6 +42,7 @@ const ViewBookingSchedule = () => {
           <thead>
             <tr>
               <th>#</th>
+              <th>Người dùng</th>
               <th>Gói dịch vụ</th>
               <th>Ngày hẹn</th>
               <th>Giá</th>
@@ -53,7 +54,6 @@ const ViewBookingSchedule = () => {
             {bookings.map((item, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{item.userFullName}</td>
                 <td>{item.servicePackageName}</td>
                 <td>{new Date(item.appointmentDate).toLocaleString("vi-VN")}</td>
                 <td>{item.price.toLocaleString("vi-VN", { style: "currency", currency: "VND" })}</td>
