@@ -3,7 +3,7 @@ import axios from "axios";
 import "./style.scss";
 import avatar from "../../../assets/users/images/thucung/a.png"; // ảnh avatar dùng chung
 
-const FeedbackList = () => {
+const AdminFeedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const FeedbackList = () => {
 
   return (
     <div className="feedback-container">
-      <h2 className="feedback-title">📣 Phản hồi người dùng</h2>
+      <h2 className="feedback-title">📣 Đánh Giá Của Người Dùng</h2>
       <div className="feedback-grid">
         {feedbacks.map((item) => (
           <div key={item.id} className="feedback-card">
@@ -42,4 +42,4 @@ const FeedbackList = () => {
   );
 };
 
-export default FeedbackList;
+export default AdminFeedback;

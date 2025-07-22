@@ -3,7 +3,6 @@ import MasterLayout from "./pages/users/theme/masterLayout";
 import { ROUTERS } from "./utils/router";
 import { Route, Routes } from "react-router-dom";
 import Service from "pages/users/Service";
-import HomePageClinic from "pages/clinic/homePage";
 import MasterClinicLayout from "./pages/clinic/theme/masterLayout";
 import LoginPage from "component/loginpage";
 import HomeAdminPage from "pages/admin/homePage";
@@ -19,7 +18,7 @@ import DetailAdmin from "pages/admin/DetailAdmin";
 import ScheduleManagement from "pages/clinic/ScheduleManagement";
 import AdminDashboard from "pages/admin/AdminDashBoard";
 import DownloadApp from "component/DownloadApp";
-import ClinicFeedbackPage from "pages/clinic/AdminFeedbackPage";
+import AdminFeedback from "pages/admin/AdminFeedbackPage";
 function renderUserRouter() {    const userRouters=[
         {
             path: ROUTERS.USER.HOME,
@@ -71,10 +70,7 @@ function renderClinicRouter() {
             path: ROUTERS.CLINIC.ScheduleManagement,
             component: <ScheduleManagement />,
         },
-        {
-            path: ROUTERS.CLINIC.ClinicFeedbackPage,
-            component: <ClinicFeedbackPage/>,
-        },
+        
         
         // Add more manager routes here if needed
     ];
@@ -109,6 +105,10 @@ function renderAdminRouter() {
         {
             path: ROUTERS.ADMIN.AdminDashboard,
             component: <AdminDashboard/>,
+        },
+        {
+            path: ROUTERS.ADMIN.AdminFeedback,
+            component: <AdminFeedback/>,
         },
         
         // Add more manager routes here if needed
