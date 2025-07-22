@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./style.scss"; // nếu cần style riêng
+import "./style.scss";
 
 const ClinicFeedbackPage = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -29,35 +29,47 @@ const ClinicFeedbackPage = () => {
     fetchFeedbacks();
   }, []);
 
-  if (loading) return <p>Đang tải phản hồi...</p>;
+  if (loading) return <p className="loading-text">Đang tải phản hồi...</p>;
 
   return (
     <div className="admin-feedback-page">
-      <h2>Quản lý Phản hồi người dùng</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Họ tên</th>
-            <th>Bình luận</th>
-            <th>Ngày gửi</th>
-          </tr>
-        </thead>
-        <tbody>
-          {feedbacks.length > 0 ? (
-            feedbacks.map((item) => (
-              <tr key={item.id}>
-                <td>{item.fullName}</td>
-                <td>{item.comment}</td>
-                <td>{new Date(item.createdTime).toLocaleString()}</td>
-              </tr>
-            ))
-          ) : (
+      <div className="feedback-header">
+        <h2>📋 Quản lý Phản hồi người dùng</h2>
+      </div>
+      <div className="feedback-table-container">
+        <table className="feedback-table">
+          <thead>
             <tr>
-              <td colSpan="3">Không có phản hồi nào.</td>
+              <th>👤 Họ tên</th>
+              <th>💬 Bình luận</th>
+              <th>📅 Ngày gửi</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {feedbacks.length > 0 ? (
+              feedbacks.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.fullName}</td>
+                  <td>{item.comment}</td>
+                  <td>
+                    {new Date(item.createdTime).toLocaleString("vi-VN", {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
+                    })}
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="3">Không có phản hồi nào.</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

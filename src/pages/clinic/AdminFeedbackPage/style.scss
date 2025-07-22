@@ -1,21 +1,62 @@
 .admin-feedback-page {
-  padding: 20px;
+  padding: 32px;
+  background: #f9f9fc;
+  min-height: 100vh;
 
-  h2 {
-    margin-bottom: 16px;
+  .feedback-header {
+    margin-bottom: 24px;
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
   }
 
-  table {
+  .feedback-table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: white;
+    padding: 16px;
+  }
+
+  .feedback-table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
 
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
+    thead {
+      background-color: #4f46e5;
+      color: white;
+
+      th {
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+      }
     }
 
-    th {
-      background-color: #f0f0f0;
+    tbody {
+      tr {
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #f0f4ff;
+        }
+      }
+
+      td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+        color: #333;
+        vertical-align: top;
+      }
     }
+  }
+
+  .loading-text {
+    font-size: 16px;
+    color: #555;
   }
 }
