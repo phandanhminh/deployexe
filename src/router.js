@@ -18,6 +18,7 @@ import RegisterPage from "component/RegisterPage";
 import DetailAdmin from "pages/admin/DetailAdmin";
 import ScheduleManagement from "pages/clinic/ScheduleManagement";
 import AdminDashboard from "pages/admin/AdminDashBoard";
+import DownloadApp from "component/DownloadApp";
 function renderUserRouter() {    const userRouters=[
         {
             path: ROUTERS.USER.HOME,
@@ -42,6 +43,10 @@ function renderUserRouter() {    const userRouters=[
         {
           path: ROUTERS.USER.ViewHistoryBooking,  
           component: <ViewHistoryBooking />,
+        },
+        {
+          path: ROUTERS.USER.DownloadApp,  
+          component: <DownloadApp />,
         },
         
     ];

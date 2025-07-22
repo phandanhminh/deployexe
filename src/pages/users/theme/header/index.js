@@ -58,6 +58,7 @@ const Header = () => {
     { name: "Đăng ký phòng khám", path: ROUTERS.USER.RegisterClinic },
     { name: "Xem phòng khám", path: ROUTERS.USER.ViewHomePages },
     { name: "Lịch sử đặt lịch", path: ROUTERS.USER.ViewHistoryBooking },
+    { name: "Tải Ứng Dụng", path: ROUTERS.USER.DownloadApp },
   ];
 
   return (
@@ -113,10 +114,10 @@ const Header = () => {
       <div className="color_header">
         <div className="container">
           <div className="row">
-            <div className="col-xl-3">
+            <div className="col-xl-3 col-lg-3 col-md-3">
               <div className="header_logo"><h1>PETTRACK</h1></div>
             </div>
-            <div className="col-xl-6">
+            <div className="col-xl-7 col-lg-7 col-md-7">
               <nav className="header_menu">
                 <ul>
                   {menus?.map((menu, index) => (
@@ -127,7 +128,7 @@ const Header = () => {
                 </ul>
               </nav>
             </div>
-            <div className="col-lg-3">
+            <div className="col-xl-2">
               <div className="header_cart">
                 <div className="header_cart_price"><span>{formatPrice(1000)}</span></div>
                 <ul>

@@ -7,6 +7,7 @@ export const ROUTERS={
         RegisterClinic:"/register",
         ViewHomePages:"/ViewHomePages",
         ViewHistoryBooking:"/ViewHistoryBooking",
+        DownloadApp:"/DownloadApp",
     },
     CLINIC:{
         ViewBookingSchedule:"/ViewBookingSchedule",

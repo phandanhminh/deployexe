@@ -110,59 +110,66 @@
 .header_logo{
     padding: 15px 0;
 }
-.header_menu{
-    padding: 30px 0;
-    ul{
-        display: flex;
-        justify-content: space-between;
-        li{
-            list-style:none;
-            position: relative;
-            a{
-                
-                text-decoration: none;
-                font-size:14px;
-                color: rgb(237, 229, 229);
-                font-weight: bold;
-                letter-spacing: 1px;
-                transition: all 0.2s;
-                padding: 5px 0;
-                display :block;
+.header_menu {
+  padding: 20px 0;
 
-            }
-        }
-        li:hover .header_menu_dropdown{
-            opacity: 100;
-            visibility: visible;
-        }
-        .header_menu_dropdown{
-            background: rgb(232, 196, 196);
-            display: block;
-            position: absolute;
-            width: 120px;
-            z-index: 9;
-            padding: 50px 0;
-            transition: all, 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            li{
-                a{
-                    text-transform: capitalize;
-                    color: rgb(0, 0, 0);
-                    font-weight: 1000;
-                    padding:5px 15px;
-                }
-                :hover{
-                    color: #432d2d;
-                }
-            }
-        }
-        .header_menu1 a{
-            color: rgb(255, 255, 255);
-        }
-        
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    li {
+      list-style: none;
+      position: relative;
+
+      a {
+        text-decoration: none;
+        font-size: 14px;
+        color: rgb(237, 229, 229);
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        transition: all 0.2s;
+        padding: 4px 6px;
+        display: block;
+        white-space: nowrap;
+      }
     }
+
+    .header_menu1 a {
+      color: white;
+    }
+
+    li:hover .header_menu_dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .header_menu_dropdown {
+      background: rgb(232, 196, 196);
+      display: block;
+      position: absolute;
+      width: 120px;
+      z-index: 9;
+      padding: 10px 0;
+      transition: all 0.3s;
+      opacity: 0;
+      visibility: hidden;
+
+      li a {
+        text-transform: capitalize;
+        color: rgb(0, 0, 0);
+        font-weight: 1000;
+        padding: 5px 15px;
+      }
+
+      li:hover a {
+        color: #432d2d;
+      }
+    }
+  }
 }
+
 
 .hero_categories{
     position: relative;
