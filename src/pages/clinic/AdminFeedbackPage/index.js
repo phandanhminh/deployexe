@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./style.scss"; // nếu cần style riêng
 
-const AdminFeedbackPage = () => {
+const ClinicFeedbackPage = () => {
   const [feedbacks, setFeedbacks] = useState([]);
   const [loading, setLoading] = useState(true);
   const token = localStorage.getItem("token");
@@ -62,4 +62,4 @@ const AdminFeedbackPage = () => {
   );
 };
 
-export default AdminFeedbackPage;
+export default ClinicFeedbackPage;

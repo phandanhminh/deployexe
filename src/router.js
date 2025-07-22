@@ -19,7 +19,7 @@ import DetailAdmin from "pages/admin/DetailAdmin";
 import ScheduleManagement from "pages/clinic/ScheduleManagement";
 import AdminDashboard from "pages/admin/AdminDashBoard";
 import DownloadApp from "component/DownloadApp";
-import AdminFeedbackPage from "pages/admin/AdminFeedbackPage";
+import ClinicFeedbackPage from "pages/clinic/AdminFeedbackPage";
 function renderUserRouter() {    const userRouters=[
         {
             path: ROUTERS.USER.HOME,
@@ -72,8 +72,8 @@ function renderClinicRouter() {
             component: <ScheduleManagement />,
         },
         {
-            path: ROUTERS.CLINIC.AdminFeedbackPage,
-            component: <AdminFeedbackPage/>,
+            path: ROUTERS.CLINIC.ClinicFeedbackPage,
+            component: <ClinicFeedbackPage/>,
         },
         
         // Add more manager routes here if needed

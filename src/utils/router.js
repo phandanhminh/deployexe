@@ -13,7 +13,7 @@ export const ROUTERS={
     CLINIC:{
         ViewBookingSchedule:"/ViewBookingSchedule",
         ScheduleManagement:"/ScheduleManagement",
-        AdminFeedbackPage:"/AdminFeedbackPage"
+        ClinicFeedbackPage:"/ClinicFeedbackPage"
         
     },
     ADMIN:{
