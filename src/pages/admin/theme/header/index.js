@@ -37,7 +37,6 @@ const Header = () => {
             <Link to="/admin/PendingClinicsPage">Phòng khám chờ duyệt</Link>
             <Link to="/admin/DetailAdmin">Quản lý người dùng</Link>
             <Link to="/admin/AdminDashboard">Quản trị người dùng</Link>
-            <Link to="/admin/AdminFeedbackPage">Phản Hồi Của Người Dùng</Link>
           </nav>
         </div>
         <div className="admin-header__right">
