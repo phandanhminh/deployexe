@@ -16,7 +16,7 @@ const DownloadApp = () => {
       className="app-image"
     />
 
-    <a href="/petcare-app.apk" download>
+    <a href="/petcare-app.apk.rar" download>
       <button className="download-btn">⬇️ Tải Ứng Dụng Chăm Sóc Thú Cưng</button>
     </a>
   </div>

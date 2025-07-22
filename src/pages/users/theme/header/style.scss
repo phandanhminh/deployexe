@@ -445,3 +445,14 @@
         }
     }
 }
+.header_menu_active a {
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px 20px;       // 👉 tăng padding cho rộng và cao hơn
+  border-radius: 24px;      // 👉 bo tròn hơn cho đẹp
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); // 👉 đổ bóng nổi bật hơn
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+

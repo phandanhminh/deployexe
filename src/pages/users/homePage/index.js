@@ -3,7 +3,6 @@ import "./style.scss";
 import thucung2 from "../../../assets/users/images/thucung/thucung2.jpg";
 import thucung3 from "../../../assets/users/images/thucung/thucung3.jpg";
 import thucung4 from "../../../assets/users/images/thucung/thucung4.jpg";
-
 const HomePage = () => {
   return (
     <section className="home-section">

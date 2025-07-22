@@ -11,7 +11,7 @@ import {
   BiPhone,
   BiUser,
 } from "react-icons/bi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation} from "react-router-dom";
 import logo from './logoHeader.png';
 import logo1 from './logo1.webp';
 import { ROUTERS } from "utils/router";
@@ -24,6 +24,7 @@ const Header = () => {
   const [isShowCategories, setShowCategories] = useState(true);
   const [isShowHumberger, setShowHumberger] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const user = localStorage.getItem("user");
@@ -54,8 +55,7 @@ const Header = () => {
 
   const menus = [
     { name: "Trang chủ", path: ROUTERS.USER.HOME },
-    { name: "Đặt lịch khám", path: ROUTERS.USER.BOOKING },
-    { name: "Đăng ký phòng khám", path: ROUTERS.USER.RegisterClinic },
+     { name: "Đăng ký phòng khám", path: ROUTERS.USER.RegisterClinic },
     { name: "Xem phòng khám", path: ROUTERS.USER.ViewHomePages },
     { name: "Lịch sử đặt lịch", path: ROUTERS.USER.ViewHistoryBooking },
     { name: "Tải Ứng Dụng", path: ROUTERS.USER.DownloadApp },
@@ -121,16 +121,18 @@ const Header = () => {
               <nav className="header_menu">
                 <ul>
                   {menus?.map((menu, index) => (
-                    <li key={index} className={index === 0 ? "header_menu1" : ""}>
-                      <Link to={menu.path}>{menu.name}</Link>
-                    </li>
+                    <li
+                       key={index}
+                       className={location.pathname === menu.path ? "header_menu_active" : ""}
+                     >
+                       <Link to={menu.path}>{menu.name}</Link>
+                     </li>
                   ))}
                 </ul>
               </nav>
             </div>
             <div className="col-xl-2">
               <div className="header_cart">
-                <div className="header_cart_price"><span>{formatPrice(1000)}</span></div>
                 <ul>
                   <li><Link to="#"><AiOutlineShoppingCart /> <span className="sizecart">5</span></Link></li>
                 </ul>
@@ -151,9 +153,8 @@ const Header = () => {
               <AiOutlineMenu /> Danh mục dịch vụ
             </div>
             <ul className={isShowCategories ? "" : "hidden"}>
-              <li><Link to="#">Dịch vụ 1</Link></li>
-              <li><Link to="#">Dịch vụ 2</Link></li>
-              <li><Link to="#">Dịch vụ 3</Link></li>
+              <li><Link to="#">Tải Ứng DỤng</Link></li>
+              <li><Link to="#">Xem Phòng Khám</Link></li>
             </ul>
           </div>
           <div className="col-lg-9 hero_search_container">
