@@ -38,7 +38,7 @@ const PendingClinicsPage = () => {
     if (result.isConfirmed) {
       try {
         const token = localStorage.getItem("token");
-        await axios.put(`http://localhost:5195/api/admin/clinics/${clinicId}/approve`, {}, {
+        await axios.put(`https://pettrack.onrender.com/api/admin/clinics/${clinicId}/approve`, {}, {
           headers: { Authorization: `Bearer ${token}` },
         });
         Swal.fire("Thành công!", "Phòng khám đã được phê duyệt.", "success");
@@ -65,7 +65,7 @@ const PendingClinicsPage = () => {
     if (result.isConfirmed) {
       try {
         const token = localStorage.getItem("token");
-        await axios.put(`http://localhost:5195/api/admin/clinics/${clinicId}/reject`, {}, {
+        await axios.put(`hhttps://pettrack.onrender.com/api/admin/clinics/${clinicId}/reject`, {}, {
           headers: { Authorization: `Bearer ${token}` },
         });
         Swal.fire("Đã từ chối!", "Phòng khám đã bị từ chối.", "success");
