@@ -72,7 +72,7 @@ function renderClinicRouter() {
             component: <ScheduleManagement />,
         },
         {
-            path: ROUTERS.ADMIN.AdminFeedbackPage,
+            path: ROUTERS.CLINIC.AdminFeedbackPage,
             component: <AdminFeedbackPage/>,
         },
         
