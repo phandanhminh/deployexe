@@ -60,7 +60,7 @@ const Header = () => {
     { name: "Lịch hẹn", path: "/clinic/ViewBookingSchedule" },
     { name: "Quản lý lịch làm việc", path: "/clinic/ScheduleManagement" },
     { name: "Gói dịch vụ", path: "/clinic/packages" },
-    { name: "phản hồi người dùng", path: "/clinic/AdminFeedbackPage" },
+    { name: "phản hồi người dùng", path: "/clinic/ClinicFeedbackPage" },
   ] : [];
 
   return (
