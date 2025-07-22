@@ -17,6 +17,7 @@ export const ROUTERS={
     ADMIN:{
         PendingClinicsPage:"/PendingClinicsPage",
         DetailAdmin:"/DetailAdmin",
-        AdminDashboard:"/AdminDashboard"
+        AdminDashboard:"/AdminDashboard",
+        AdminFeedbackPage:"/AdminFeedbackPage"
     },
 };

@@ -19,6 +19,7 @@ import DetailAdmin from "pages/admin/DetailAdmin";
 import ScheduleManagement from "pages/clinic/ScheduleManagement";
 import AdminDashboard from "pages/admin/AdminDashBoard";
 import DownloadApp from "component/DownloadApp";
+import AdminFeedbackPage from "pages/admin/AdminFeedbackPage";
 function renderUserRouter() {    const userRouters=[
         {
             path: ROUTERS.USER.HOME,
@@ -105,7 +106,10 @@ function renderAdminRouter() {
             path: ROUTERS.ADMIN.AdminDashboard,
             component: <AdminDashboard/>,
         },
-        
+        {
+            path: ROUTERS.ADMIN.AdminFeedbackPage,
+            component: <AdminFeedbackPage/>,
+        },
         // Add more manager routes here if needed
     ];
 
