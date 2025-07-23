@@ -59,7 +59,6 @@ const Header = () => {
   const menus = currentUser?.role === "Clinic" ? [
     { name: "Lịch hẹn", path: "/clinic/ViewBookingSchedule" },
     { name: "Quản lý lịch làm việc", path: "/clinic/ScheduleManagement" },
-    { name: "Gói dịch vụ", path: "/clinic/packages" },
   ] : [];
 
   return (
