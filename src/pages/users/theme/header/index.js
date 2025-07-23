@@ -153,7 +153,7 @@ const Header = () => {
               <AiOutlineMenu /> Danh mục dịch vụ
             </div>
             <ul className={isShowCategories ? "" : "hidden"}>
-              <li><Link to="#">Tải Ứng DỤng</Link></li>
+              <li><Link to="#">Tải Ứng Dụng</Link></li>
               <li><Link to="#">Xem Phòng Khám</Link></li>
             </ul>
           </div>

@@ -49,7 +49,7 @@ useEffect(() => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5195/api/admin/users/${id}`, {
+        await axios.delete(`https://pettrack.onrender.com/api/admin/users/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         await fetchUsers();
@@ -73,7 +73,7 @@ useEffect(() => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5195/api/admin/users/${selectedUser.id}`, editData, {
+      await axios.put(`https://pettrack.onrender.com/api/admin/users/${selectedUser.id}`, editData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSelectedUser(null);
