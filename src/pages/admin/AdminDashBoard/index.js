@@ -5,6 +5,7 @@ import {
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from "recharts";
 import "./style.scss";
+import SummaryCard from "component/SummaryCard";
 
 const AdminDashboard = () => {
   const [clinics, setClinics] = useState([]);
@@ -111,6 +112,26 @@ const AdminDashboard = () => {
           </select>
         </div>
       </div>
+      <div className="summary-grid">
+  <SummaryCard
+    title="Doanh thu phòng khám"
+    value={sumData(revenueData, "revenue")}
+    change={5.2} // hoặc lấy từ API nếu có
+    icon="💰"
+  />
+  <SummaryCard
+    title="Số lượt đặt"
+    value={sumData(bookingData, "count")}
+    change={2.1}
+    icon="📅"
+  />
+  <SummaryCard
+    title="Doanh thu nền tảng"
+    value={sumData(platformRevenue, "revenue")}
+    change={3.6}
+    icon="📊"
+  />
+</div>
 
       <div className="chart-grid">
         <div className="chart-card">
